@@ -5,128 +5,9 @@
     <title>Furama</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="https://blog.getbootstrap.com/assets/brand/bootstrap-logo-shadow.png">
-
-    <style>
-        .row {
-            margin-right: 0;
-            margin-left: 0;
-        }
-
-        a {
-            color: #7c7c7c;
-        }
-
-        :root {
-            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-            --bd-accent-rgb: 255, 228, 132;
-            --bd-pink-rgb: 214, 51, 132;
-            --bs-primary-rgb: 13, 110, 253;
-            --bs-body-bg-rgb: 255, 255, 255;
-            box-sizing: border-box;
-            margin: 0;
-        }
-
-        .bg {
-            background-image: linear-gradient(180deg,
-            rgba(var(--bs-body-bg-rgb), 0.01),
-            rgba(var(--bs-body-bg-rgb), 1) 85%),
-            radial-gradient(ellipse at top left,
-                    rgba(var(--bs-primary-rgb), 0.5), transparent 50%),
-            radial-gradient(ellipse at top right,
-                    rgba(var(--bd-accent-rgb), 0.5), transparent 50%),
-            radial-gradient(ellipse at center right,
-                    rgba(var(--bd-violet-rgb), 0.5), transparent 50%),
-            radial-gradient(ellipse at center left,
-                    rgba(var(--bd-pink-rgb), 0.5), transparent 50%);
-        }
-
-        .up {
-            margin-top: .3em;
-            transform: rotate(90deg);
-            color: #e0e0e0;
-            font-weight: 700;
-        }
-
-        .bg-purple {
-            background: #732ff9;
-        }
-
-        .logo-hover:hover {
-            height: 1.7em;
-            transition: .2s;
-            transform: rotate(-8deg);
-            cursor: pointer;
-        }
-
-        .b-hover:hover {
-            transition: .2s;
-            transform: rotate(-8deg);
-            cursor: pointer;
-        }
-
-        .b-up {
-            border: 0;
-            border-radius: 2em;
-            width: 2.5em;
-            height: 2.5em;
-            margin-left: 1em;
-            margin-bottom: 1em;
-            z-index: 10;
-        }
-
-        .b-up:hover {
-            opacity: .8;
-        }
-
-        .middle {
-            transition: .5s ease;
-            opacity: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            text-align: center;
-            cursor: pointer;
-        }
-
-        .container-img:hover .image {
-            opacity: 0.3;
-        }
-
-        .container-img:hover .middle {
-            opacity: 1;
-
-        }
-
-        .text {
-            height: 2.5em;
-            width: 9em;
-            background: #732ff9;
-            color: white;
-            padding: 8px 32px;
-            border-radius: .5em;
-            margin-bottom: 5em;
-        }
-
-        .text:hover {
-            background: #8d54ff;
-            transition: .2s;
-        }
-
-        .image {
-            opacity: 1;
-            display: block;
-            width: 100%;
-            height: auto;
-            transition: .5s ease;
-            backface-visibility: hidden;
-        }
-        .shadow {
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        }
-    </style>
+    <script src="https://kit.fontawesome.com/42941c58fd.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div>
@@ -207,107 +88,176 @@
     </div>
     <div class="container">
         <div class="row d-flex justify-content-center mt-5">
-            <div class="col-4 d-flex justify-content-center p-0 ">
-                <div class="card container-img" style="width: 18rem;">
+            <div class="col-4 d-flex justify-content-center p-0">
+                <div class="card container-img shadow-card" style="width: 18rem;">
                     <img class="card-img-top image"
                          src="https://cdn.pixabay.com/photo/2017/08/07/09/25/swimming-2601877_960_720.jpg"
                          alt="Card image cap">
-                    <div class="middle ">
-                        <a>
-                            <div class="text">book now</div>
+                    <div class="middle">
+                        <a data-toggle="modal" data-target="#create">
+                            <div class="text">update</div>
                         </a>
                     </div>
                     <div class="card-body">
-                        <h6 class="m-0">OCEAN SUITE</h6>
-                        <small>Room size: 74.2 m2</small>
+                        <div class="row d-flex justify-content-between">
+                            <div>
+                                <h6 class="m-0">OCEAN SUITE</h6>
+                                <small>Room size: 74.2 m2</small>
+                            </div>
+                            <div>
+                                <a><i style="font-size: 1.2em" class="fa-solid fa-circle-info"></i></a>
+                                <a><i data-toggle="modal" data-target="#delete" style="font-size: 1.2em" class="fa-solid fa-eraser ml-2"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-4 d-flex justify-content-center p-0">
-                <div class="card container-img" style="width: 18rem;">
+                <div class="card container-img shadow-card" style="width: 18rem;">
                     <img class="card-img-top image"
                          src="https://cdn.pixabay.com/photo/2017/08/07/09/25/swimming-2601877_960_720.jpg"
                          alt="Card image cap">
                     <div class="middle ">
-                        <a>
-                            <div class="text">book now</div>
+                        <a data-toggle="modal" data-target="#create">
+                            <div class="text">update</div>
                         </a>
                     </div>
                     <div class="card-body">
-                        <h6 class="m-0">OCEAN DELUXE</h6>
-                        <small>Room size: 45.2 m2</small>
+                        <div class="row d-flex justify-content-between">
+                            <div>
+                                <h6 class="m-0">OCEAN DELUXE</h6>
+                                <small>Room size: 45.2 m2</small>
+                            </div>
+                            <div>
+                                <a><i style="font-size: 1.2em" class="fa-solid fa-circle-info"></i></a>
+                                <a><i data-toggle="modal" data-target="#delete" style="font-size: 1.2em" class="fa-solid fa-eraser ml-2"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-4 d-flex justify-content-center p-0">
-                <div class="card container-img" style="width: 18rem;">
-                    <img class="card-img-top image"
+                <div class="card container-img shadow-card" style="width: 18rem;">
+                        <img class="card-img-top image"
                          src="https://cdn.pixabay.com/photo/2017/08/07/09/25/swimming-2601877_960_720.jpg"
                          alt="Card image cap">
                     <div class="middle ">
-                        <a>
-                            <div class="text">book now</div>
+                        <a data-toggle="modal" data-target="#create">
+                            <div class="text">update</div>
                         </a>
                     </div>
                     <div class="card-body">
-                        <h6 class="m-0">GARDEN SUPERIOR</h6>
-                        <small>Room size: 55.6 m2</small>
+                        <div class="row d-flex justify-content-between">
+                            <div>
+                                <h6 class="m-0">GARDEN SUPERIOR</h6>
+                                <small>Room size: 55.6 m2</small>
+                            </div>
+                            <div>
+                                <a><i style="font-size: 1.2em" class="fa-solid fa-circle-info"></i></a>
+                                <a><i data-toggle="modal" data-target="#delete" style="font-size: 1.2em" class="fa-solid fa-eraser ml-2"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row d-flex justify-content-center mt-5">
-            <div class="col-4 d-flex justify-content-center p-0 ">
-                <div class="card container-img" style="width: 18rem;">
+            <div class="col-4 d-flex justify-content-center p-0">
+                <div class="card container-img shadow-card" style="width: 18rem;">
                     <img class="card-img-top image"
                          src="https://cdn.pixabay.com/photo/2017/08/07/09/25/swimming-2601877_960_720.jpg"
                          alt="Card image cap">
-                    <div class="middle ">
-                        <a>
-                            <div class="text">book now</div>
+                    <div class="middle">
+                        <a data-toggle="modal" data-target="#create">
+                            <div class="text">update</div>
                         </a>
                     </div>
                     <div class="card-body">
-                        <h6 class="m-0">OCEAN SUITE</h6>
-                        <small>Room size: 74.2 m2</small>
+                        <div class="row d-flex justify-content-between">
+                            <div>
+                                <h6 class="m-0">OCEAN SUITE</h6>
+                                <small>Room size: 74.2 m2</small>
+                            </div>
+                            <div>
+                                <a><i style="font-size: 1.2em" class="fa-solid fa-circle-info"></i></a>
+                                <a><i data-toggle="modal" data-target="#delete" style="font-size: 1.2em" class="fa-solid fa-eraser ml-2"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-4 d-flex justify-content-center p-0">
-                <div class="card container-img" style="width: 18rem;">
+                <div class="card container-img shadow-card" style="width: 18rem;">
                     <img class="card-img-top image"
                          src="https://cdn.pixabay.com/photo/2017/08/07/09/25/swimming-2601877_960_720.jpg"
                          alt="Card image cap">
                     <div class="middle ">
-                        <a>
-                            <div class="text">book now</div>
+                        <a data-toggle="modal" data-target="#create">
+                            <div class="text">update</div>
                         </a>
                     </div>
                     <div class="card-body">
-                        <h6 class="m-0">OCEAN DELUXE</h6>
-                        <small>Room size: 45.2 m2</small>
+                        <div class="row d-flex justify-content-between">
+                            <div>
+                                <h6 class="m-0">OCEAN DELUXE</h6>
+                                <small>Room size: 45.2 m2</small>
+                            </div>
+                            <div>
+                                <a><i style="font-size: 1.2em" class="fa-solid fa-circle-info"></i></a>
+                                <a><i data-toggle="modal" data-target="#delete" style="font-size: 1.2em" class="fa-solid fa-eraser ml-2"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-4 d-flex justify-content-center p-0">
-                <div class="card container-img" style="width: 18rem;">
+                <div class="card container-img shadow-card" style="width: 18rem;">
                     <img class="card-img-top image"
                          src="https://cdn.pixabay.com/photo/2017/08/07/09/25/swimming-2601877_960_720.jpg"
                          alt="Card image cap">
                     <div class="middle ">
-                        <a>
-                            <div class="text">book now</div>
+                        <a data-toggle="modal" data-target="#create">
+                            <div class="text">update</div>
                         </a>
                     </div>
                     <div class="card-body">
-                        <h6 class="m-0">GARDEN SUPERIOR</h6>
-                        <small>Room size: 55.6 m2</small>
+                        <div class="row d-flex justify-content-between">
+                            <div>
+                                <h6 class="m-0">GARDEN SUPERIOR</h6>
+                                <small>Room size: 55.6 m2</small>
+                            </div>
+                            <div>
+                                <a><i style="font-size: 1.2em" class="fa-solid fa-circle-info"></i></a>
+                                <a><i data-toggle="modal" data-target="#delete" style="font-size: 1.2em" class="fa-solid fa-eraser ml-2"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <button onclick="topFunction()" id="myBtn" class="bg-purple b-up" title="Go to top"><p class="up"><</p></button>
+
+    <!--pagination-->
+    <div class="row d-flex justify-content-center mt-5">
+        <nav aria-label="...">
+            <ul class="pagination" >
+                <li class="page-item">
+                    <a class="page-link clear" href="#" tabindex="-1"><span class="color-text">Previous</span></a>
+                </li>
+                <li class="page-item"><a class="page-link clear" href="#"><span class="color-text">1</span></a></li>
+                <li class="page-item">
+                    <a class="page-link clear" href="#"><span class="color-text">2</span></a>
+                </li>
+                <li class="page-item clear"><a class="page-link clear" href="#"><span class="color-text">3</span></a></li>
+                <li class="page-item">
+                    <a class="page-link clear" href="#"><span class="color-text">Next</span></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!--scroll top-->
+    <button onclick="topFunction()" id="myBtn" class="bg-purple b-up" title="Go to top"><i style="color: #e0e0e0" class="fa-solid fa-angle-up"></i></button>
 
     <div class="container-fluid p-0">
         <footer class="bd-footer py-5 mt-5 bg-light p-0">
@@ -389,18 +339,113 @@
             </div>
         </footer>
     </div>
+</div>
+<!--modal update-->
+<div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div style="background: rgba(0,0,0,0)" class="modal-content">
+            <div class="modal-header d-flex justify-content-center bg-purple">
+                <h6 class="modal-title text-light" id="exampleModalLabel">Facility form</h6>
+            </div>
+            <div class="modal-body bg-white rounded-bottom">
+                <form action="/facility" method="post" id="create-customer">
+                    <input type="hidden" id="id" placeholder="id">
+                    <div class="row d-flex justify-content-around mb-3">
+                        <div class="col-6">
+                            <input id="area" type="text" placeholder="enter area" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-6 pl-0">
+                            <input id="cost" type="text" placeholder="enter cost" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-around my-3">
+                        <div class="col-6">
+                            <input id="maxPeople" type="text" placeholder="enter max people" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-6 pl-0">
+                            <select class="form-control form-control-sm" id="rentType">
+                                <option ></option>
+                            </select>
+                        </div>
+                    </div>
 
-    <div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-                crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-                crossorigin="anonymous"></script>
+                    <div class="row d-flex justify-content-around mt-3" id="standardRoom_ok">
+                        <div class="col-12">
+                            <input type="text" placeholder="enter standard room" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-around mt-3" id="description_ok">
+                        <div class="col-12">
+                            <input type="text" placeholder="enter description" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-around mt-3" id="poolArea_ok">
+                        <div class="col-12">
+                            <input type="text" placeholder="enter pool area" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-around mt-3" id="floorsNumber_ok">
+                        <div class="col-12">
+                            <input type="text" placeholder="enter floors number" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-around mt-3" id="facilityFree_ok">
+                        <div class="col-12">
+                            <input type="text" placeholder="enter facility free" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-around mt-3">
+                        <div class="col-12">
+                            <input style="width: 100%" type="submit" onclick="createCustomer()" value="submit" class="btn btn-sm bg-purple text-light">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
+</div>
 
+<!--modal delete-->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div style="background: rgba(0,0,0,0)" class="modal-content">
+            <div class="modal-header d-flex justify-content-center bg-purple">
+                <h6 class="modal-title text-light">Confirm</h6>
+            </div>
+            <div class="modal-body bg-white rounded-bottom">
+                <div class="row d-flex justify-content-around">
+                    <input type="hidden" id="delete-id">
+                    <div class="mb-2">
+                        delete facility ?
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-around mt-2">
+                    <div class="col-3 pr-0">
+                        <input style="width: 100%" type="button" data-dismiss="modal" value="close" class="btn btn-sm bg-secondary text-light">
+                    </div>
+                    <div class="col-9">
+                        <input style="width: 100%" type="button" value="delete" class="btn btn-sm bg-purple text-light deleteCustomer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</div>
 </body>
 <script>
     //Get the button
