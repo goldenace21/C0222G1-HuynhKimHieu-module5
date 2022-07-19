@@ -6,8 +6,8 @@
 a {
   color: #7c7c7c;
   cursor: pointer;
-
 }
+
 a:hover {
   text-decoration: none;
 }
@@ -144,3 +144,10 @@ a:hover {
 .clear {
   background-color: rgba(0, 0, 0, 0);
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 0;
+}
+
+

@@ -1,0 +1,190 @@
+<div class="container-fluid bg p-0 pt-5">
+  <div class="container p-0">
+    <div class="row">
+      <h2 class="mx-auto my-4"><em>Facility management</em></h2>
+    </div>
+    <div class="row d-flex justify-content-between">
+      <div>
+        <button id="modal" type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#create">add new facility</button>
+
+        <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div style="background: rgba(0,0,0,0)" class="modal-content">
+              <div class="modal-header d-flex justify-content-center bg-purple">
+                <h6 class="modal-title text-light" id="exampleModalLabel">Facility form</h6>
+              </div>
+              <div class="modal-body bg-white rounded-bottom">
+                <form action="/facility" method="post" id="create-customer">
+                  <input type="hidden" id="id" placeholder="id">
+                  <div class="row d-flex justify-content-around mb-3">
+                    <div class="col-6 pr-0">
+                      <select class="form-control form-control-sm" id="facilityType">
+                        <option></option>
+                      </select>
+                    </div>
+                    <div class="col-6">
+                      <input id="name" type="text" placeholder="enter name" class="form-control form-control-sm">
+                    </div>
+                  </div>
+                  <div class="row d-flex justify-content-around my-3">
+                    <div class="col-6">
+                      <input id="area"  type="text" placeholder="enter area" class="form-control form-control-sm">
+                    </div>
+                    <div class="col-6 pl-0">
+                      <input id="cost" type="text" placeholder="enter cost" class="form-control form-control-sm">
+                    </div>
+                  </div>
+                  <div class="row d-flex justify-content-around my-3">
+                    <div class="col-6">
+                      <input id="maxPeople" type="text" placeholder="enter max people" class="form-control form-control-sm">
+                    </div>
+                    <div class="col-6 pl-0">
+                      <select class="form-control form-control-sm" id="rentType">
+                        <option ></option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row d-flex justify-content-around mt-3" id="standardRoom_ok">
+                    <div class="col-12">
+                      <input type="text" placeholder="enter standard room" class="form-control form-control-sm">
+                    </div>
+                  </div>
+
+                  <div class="row d-flex justify-content-around mt-3" id="description_ok">
+                    <div class="col-12">
+                      <input type="text" placeholder="enter description" class="form-control form-control-sm">
+                    </div>
+                  </div>
+
+                  <div class="row d-flex justify-content-around mt-3" id="poolArea_ok">
+                    <div class="col-12">
+                      <input type="text" placeholder="enter pool area" class="form-control form-control-sm">
+                    </div>
+                  </div>
+
+                  <div class="row d-flex justify-content-around mt-3" id="floorsNumber_ok">
+                    <div class="col-12">
+                      <input type="text" placeholder="enter floors number" class="form-control form-control-sm">
+                    </div>
+                  </div>
+
+                  <div class="row d-flex justify-content-around mt-3" id="facilityFree_ok">
+                    <div class="col-12">
+                      <input type="text" placeholder="enter facility free" class="form-control form-control-sm">
+                    </div>
+                  </div>
+
+                  <div class="row d-flex justify-content-around mt-3">
+                    <div class="col-12">
+                      <input style="width: 100%" type="submit" onclick="createCustomer()" value="submit" class="btn btn-sm bg-purple text-light">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row my-3">
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Area</th>
+          <th scope="col">Cost</th>
+          <th scope="col">Max People</th>
+          <th scope="col">Rent Type</th>
+          <th scope="col">Standard Room</th>
+          <th scope="col">Description</th>
+          <th scope="col">Pool Area</th>
+          <th scope="col">Floor Number</th>
+          <th scope="col">Facility Free</th>
+          <th scope="col">Facility type</th>
+          <th scope="col">Update</th>
+          <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody id="facility-list">
+        <tr>
+          <td>1</td>
+          <td>kim hieu</td>
+          <td>20</td>
+          <td>87</td>
+          <td>20</td>
+          <td>day</td>
+          <td>vip</td>
+          <td>room</td>
+          <td>54</td>
+          <td>4</td>
+          <td>pool</td>
+          <td>villa</td>
+          <td><button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#create">update</button></td>
+          <td><button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#delete">delete</button></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>kim hieu</td>
+          <td>20</td>
+          <td>87</td>
+          <td>20</td>
+          <td>day</td>
+          <td>vip</td>
+          <td>room</td>
+          <td>54</td>
+          <td>4</td>
+          <td>pool</td>
+          <td>villa</td>
+          <td><button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#create">update</button></td>
+          <td><button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#delete">delete</button></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>kim hieu</td>
+          <td>20</td>
+          <td>87</td>
+          <td>20</td>
+          <td>day</td>
+          <td>vip</td>
+          <td>room</td>
+          <td>54</td>
+          <td>4</td>
+          <td>pool</td>
+          <td>villa</td>
+          <td><button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#create">update</button></td>
+          <td><button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#delete">delete</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div style="background: rgba(0,0,0,0)" class="modal-content">
+      <div class="modal-header d-flex justify-content-center bg-purple">
+        <h6 class="modal-title text-light">Confirm</h6>
+      </div>
+      <div class="modal-body bg-white rounded-bottom">
+        <div class="row d-flex justify-content-around">
+          <input type="hidden" id="delete-id">
+          <div class="mb-2">
+            delete facility: <span id="delete-name"></span>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-around mt-2">
+          <div class="col-3 pr-0">
+            <input style="width: 100%" type="button" data-dismiss="modal" value="close" class="btn btn-sm bg-secondary text-light">
+          </div>
+          <div class="col-9">
+            <input style="width: 100%" type="button" value="delete" class="btn btn-sm bg-purple text-light deleteCustomer">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
