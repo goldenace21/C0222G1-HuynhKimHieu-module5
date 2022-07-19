@@ -38,7 +38,6 @@ export class ArticleComponent implements OnInit {
   addNewArticle() {
     this.articles.push(this.article);
   }
-
 }
 
 export interface Article {

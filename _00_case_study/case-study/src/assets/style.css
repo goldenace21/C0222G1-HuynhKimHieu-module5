@@ -150,4 +150,13 @@ a:hover {
   width: 0;
 }
 
+th {
+  text-align: center;
+}
+
+td {
+  text-align: center;
+}
+
+
 
