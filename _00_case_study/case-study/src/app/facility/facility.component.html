@@ -8,7 +8,7 @@
         <button id="modal" type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#create">add new facility</button>
 
         <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
+          <div class="modal-dialog modal-lg" role="document">
             <div style="background: rgba(0,0,0,0)" class="modal-content">
               <div class="modal-header d-flex justify-content-center bg-purple">
                 <h6 class="modal-title text-light" id="exampleModalLabel">Facility form</h6>
@@ -17,18 +17,20 @@
                 <form action="/facility" method="post" id="create-customer">
                   <input type="hidden" id="id" placeholder="id">
                   <div class="row d-flex justify-content-around mb-3">
-                    <div class="col-6 pr-0">
+                    <div class="col-6 ">
                       <select class="form-control form-control-sm" id="facilityType">
-                        <option></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
                       </select>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 pl-0">
                       <input id="name" type="text" placeholder="enter name" class="form-control form-control-sm">
                     </div>
                   </div>
                   <div class="row d-flex justify-content-around my-3">
                     <div class="col-6">
-                      <input id="area"  type="text" placeholder="enter area" class="form-control form-control-sm">
+                      <input id="area" type="text" placeholder="enter area" class="form-control form-control-sm">
                     </div>
                     <div class="col-6 pl-0">
                       <input id="cost" type="text" placeholder="enter cost" class="form-control form-control-sm">
@@ -40,7 +42,7 @@
                     </div>
                     <div class="col-6 pl-0">
                       <select class="form-control form-control-sm" id="rentType">
-                        <option ></option>
+                        <option></option>
                       </select>
                     </div>
                   </div>
@@ -77,7 +79,7 @@
 
                   <div class="row d-flex justify-content-around mt-3">
                     <div class="col-12">
-                      <input style="width: 100%" type="submit" onclick="createCustomer()" value="submit" class="btn btn-sm bg-purple text-light">
+                      <input style="width: 100%" type="submit" onclick="createFacility()" value="submit" class="btn btn-sm bg-purple text-light">
                     </div>
                   </div>
                 </form>
@@ -87,7 +89,6 @@
         </div>
       </div>
     </div>
-
     <div class="row my-3">
       <table class="table">
         <thead>
@@ -188,3 +189,33 @@
     </div>
   </div>
 </div>
+
+<script>
+
+  $("#create").on("change", "#facilityType", function () {
+    console.log(this.value);
+    switch (this.value) {
+      case"1":
+        document.getElementById("standardRoom_ok").style.setProperty('display', 'block', 'important');
+        document.getElementById("description_ok").style.setProperty('display', 'block', 'important');
+        document.getElementById("floorsNumber_ok").style.setProperty('display', 'block', 'important');
+        document.getElementById("poolArea_ok").style.setProperty('display', 'block', 'important');
+        document.getElementById("facilityFree_ok").style.setProperty('display', 'none', 'important');
+        break;
+      case"2":
+        document.getElementById("standardRoom_ok").style.setProperty('display', 'block', 'important');
+        document.getElementById("description_ok").style.setProperty('display', 'block', 'important');
+        document.getElementById("floorsNumber_ok").style.setProperty('display', 'block', 'important');
+        document.getElementById("poolArea_ok").style.setProperty('display', 'none', 'important');
+        document.getElementById("facilityFree_ok").style.setProperty('display', 'none', 'important');
+        break;
+      case"3":
+        document.getElementById("standardRoom_ok").style.setProperty('display', 'none', 'important');
+        document.getElementById("description_ok").style.setProperty('display', 'none', 'important');
+        document.getElementById("floorsNumber_ok").style.setProperty('display', 'none', 'important');
+        document.getElementById("poolArea_ok").style.setProperty('display', 'none', 'important');
+        document.getElementById("facilityFree_ok").style.setProperty('display', 'block', 'important');
+        break;
+    }
+  })
+</script>
