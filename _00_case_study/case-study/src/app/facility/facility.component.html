@@ -1,4 +1,5 @@
 <div class="container-fluid bg p-0 pt-5">
+  <div class="pt-5"></div>
   <div class="container p-0">
     <div class="row">
       <h2 class="mx-auto my-4"><em>Facility management</em></h2>
@@ -96,65 +97,24 @@
           <th scope="col">Id</th>
           <th scope="col">Name</th>
           <th scope="col">Area</th>
-          <th scope="col">Cost</th>
-          <th scope="col">Max People</th>
-          <th scope="col">Rent Type</th>
-          <th scope="col">Standard Room</th>
-          <th scope="col">Description</th>
-          <th scope="col">Pool Area</th>
-          <th scope="col">Floor Number</th>
-          <th scope="col">Facility Free</th>
-          <th scope="col">Facility type</th>
+<!--          <th scope="col">Cost</th>-->
+<!--          <th scope="col">Max People</th>-->
+<!--          <th scope="col">Rent Type</th>-->
+<!--          <th scope="col">Standard Room</th>-->
+<!--          <th scope="col">Description</th>-->
+<!--          <th scope="col">Pool Area</th>-->
+<!--          <th scope="col">Floor Number</th>-->
+<!--          <th scope="col">Facility Free</th>-->
+<!--          <th scope="col">Facility type</th>-->
           <th scope="col">Update</th>
           <th scope="col">Delete</th>
         </tr>
         </thead>
         <tbody id="facility-list">
-        <tr>
-          <td>1</td>
-          <td>kim hieu</td>
-          <td>20</td>
-          <td>87</td>
-          <td>20</td>
-          <td>day</td>
-          <td>vip</td>
-          <td>room</td>
-          <td>54</td>
-          <td>4</td>
-          <td>pool</td>
-          <td>villa</td>
-          <td><button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#create">update</button></td>
-          <td><button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#delete">delete</button></td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>kim hieu</td>
-          <td>20</td>
-          <td>87</td>
-          <td>20</td>
-          <td>day</td>
-          <td>vip</td>
-          <td>room</td>
-          <td>54</td>
-          <td>4</td>
-          <td>pool</td>
-          <td>villa</td>
-          <td><button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#create">update</button></td>
-          <td><button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#delete">delete</button></td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>kim hieu</td>
-          <td>20</td>
-          <td>87</td>
-          <td>20</td>
-          <td>day</td>
-          <td>vip</td>
-          <td>room</td>
-          <td>54</td>
-          <td>4</td>
-          <td>pool</td>
-          <td>villa</td>
+        <tr *ngFor="let facility of facilitys">
+          <td>{{facility.id}}</td>
+          <td>{{facility.name}}</td>
+          <td>{{facility.area}}</td>
           <td><button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#create">update</button></td>
           <td><button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#delete">delete</button></td>
         </tr>
@@ -189,7 +149,6 @@
     </div>
   </div>
 </div>
-
 <script>
 
   $("#create").on("change", "#facilityType", function () {

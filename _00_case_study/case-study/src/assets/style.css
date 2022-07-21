@@ -23,7 +23,7 @@ a:hover {
 }
 
 .bg {
-  background-image: linear-gradient(180deg,
+  background: linear-gradient(180deg,
   rgba(var(--bs-body-bg-rgb), 0.01),
   rgba(var(--bs-body-bg-rgb), 1) 85%),
   radial-gradient(ellipse at top left,

@@ -1,0 +1,17 @@
+<div class="container d-flex justify-content-center mt-5">
+  <form [formGroup]="sigUpForm">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="enter email address" formControlName="email">
+      <div *ngIf="sigUpForm.controls.email.hasError('email') && sigUpForm.controls.email.dirty" class="form-text text-danger">wrong format email</div>
+      <div *ngIf="sigUpForm.controls.email.hasError('required') && sigUpForm.controls.email.dirty" class="form-text text-danger">required filed</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="enter password" formControlName="password">
+      <div *ngIf="sigUpForm.controls.password.hasError('minlength') && sigUpForm.controls.password.dirty" class="form-text text-danger">wrong format passdword</div>
+      <div *ngIf="sigUpForm.controls.password.hasError('required') && sigUpForm.controls.password.dirty" class="form-text text-danger">required filed</div>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="getInfo()">Submit</button>
+  </form>
+</div>

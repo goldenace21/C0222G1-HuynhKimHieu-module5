@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
-// @ts-ignore
+
 import {IRatingUnit} from '../i-rating-unit';
 
 @Component({
