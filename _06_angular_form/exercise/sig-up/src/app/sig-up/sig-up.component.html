@@ -41,6 +41,7 @@
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">phone number</label>
       <input type="text" class="form-control" id="exampleInputPasswo" placeholder="enter phone number" formControlName="phone">
+      <div *ngIf="sigUpForm.controls.phone.hasError('pattern') && sigUpForm.controls.phone.dirty" class="form-text text-danger">wrong format</div>
     </div>
     <div class="mb-3 form-check">
       <input type="checkbox" class="form-check-input" id="exampleCheck1">

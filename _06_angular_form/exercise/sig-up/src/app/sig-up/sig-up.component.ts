@@ -21,7 +21,7 @@ export class SigUpComponent implements OnInit {
       country: new FormControl('',[Validators.required]),
       age: new FormControl('',[Validators.min(18)]),
       gender: new FormControl(),
-      phone: new FormControl()
+      phone: new FormControl('',[Validators.pattern("^\\+84\\d{9,10}$")])
     }, [CustomValidators.MatchValidator('password', 'passwordConfirm')])
   }
 
