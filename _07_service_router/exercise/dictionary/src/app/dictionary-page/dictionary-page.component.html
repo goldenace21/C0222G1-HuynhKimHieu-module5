@@ -1,0 +1,7 @@
+<p>dictionary-page works!</p>
+<table>
+  <tr *ngFor="let word of wordList">
+    <td>{{word.word}}</td>
+    <td><input type="button" value="mean" routerLink="/detail/{{word.word}}"></td>
+  </tr>
+</table>
