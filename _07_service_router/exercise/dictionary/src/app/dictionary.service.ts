@@ -30,7 +30,6 @@ export class DictionaryService {
       mean: "thor",
     },
   ];
-
   findAll(): IWord[] {
     return this.words;
   }
