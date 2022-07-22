@@ -5,7 +5,6 @@ import {IWord} from "./IWord";
   providedIn: 'root'
 })
 export class DictionaryService {
-
   constructor() {
   }
 
