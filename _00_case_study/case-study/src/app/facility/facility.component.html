@@ -4,11 +4,41 @@
     <div class="row">
       <h2 class="mx-auto my-4"><em>Facility management</em></h2>
     </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row mb-4 d-flex justify-content-center">
+      <div id="carouselExampleControls" class="carousel slide w-100 col-10" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" style="height: 30em;">
+            <img style="overflow: hidden" class="d-block w-100 rounded" src="https://cdn.pixabay.com/photo/2017/07/03/22/52/blue-2469300_960_720.jpg" alt="First slide">
+          </div>
+          <div class="carousel-item" style="height: 30em;">
+            <img style="overflow: hidden" class="d-block w-100 rounded" src="https://cdn.pixabay.com/photo/2015/01/13/13/21/paradise-598201_960_720.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item" style="height: 30em;">
+            <img style="overflow: hidden" class="d-block w-100 rounded" src="https://cdn.pixabay.com/photo/2016/02/29/06/43/cancun-1228131_960_720.jpg" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container p-0">
     <div class="row d-flex justify-content-between">
       <div>
-        <button id="modal" type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#create">add new facility</button>
+        <button id="modal" type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal"
+                data-target="#create">add new facility
+        </button>
 
-        <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
           <div class="modal-dialog modal-lg" role="document">
             <div style="background: rgba(0,0,0,0)" class="modal-content">
               <div class="modal-header d-flex justify-content-center bg-purple">
@@ -39,7 +69,8 @@
                   </div>
                   <div class="row d-flex justify-content-around my-3">
                     <div class="col-6">
-                      <input id="maxPeople" type="text" placeholder="enter max people" class="form-control form-control-sm">
+                      <input id="maxPeople" type="text" placeholder="enter max people"
+                             class="form-control form-control-sm">
                     </div>
                     <div class="col-6 pl-0">
                       <select class="form-control form-control-sm" id="rentType">
@@ -80,7 +111,8 @@
 
                   <div class="row d-flex justify-content-around mt-3">
                     <div class="col-12">
-                      <input style="width: 100%" type="submit" onclick="createFacility()" value="submit" class="btn btn-sm bg-purple text-light">
+                      <input style="width: 100%" type="submit" onclick="createFacility()" value="submit"
+                             class="btn btn-sm bg-purple text-light">
                     </div>
                   </div>
                 </form>
@@ -89,37 +121,42 @@
           </div>
         </div>
       </div>
+      <div>
+        <form id="search-customer" class="input-group input-group-sm mb-3">
+          <input id="search-name" style="background: rgba(0,0,0,0)" class="form-control mr-sm-2" type="search" placeholder="Search by name" aria-label="Small">
+          <input type="button" onclick="searchCustomer()" value="search" class="btn btn-outline-success btn-sm">
+        </form>
+      </div>
     </div>
-    <div class="row my-3">
-      <table class="table">
-        <thead>
-        <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Name</th>
-          <th scope="col">Area</th>
-<!--          <th scope="col">Cost</th>-->
-<!--          <th scope="col">Max People</th>-->
-<!--          <th scope="col">Rent Type</th>-->
-<!--          <th scope="col">Standard Room</th>-->
-<!--          <th scope="col">Description</th>-->
-<!--          <th scope="col">Pool Area</th>-->
-<!--          <th scope="col">Floor Number</th>-->
-<!--          <th scope="col">Facility Free</th>-->
-<!--          <th scope="col">Facility type</th>-->
-          <th scope="col">Update</th>
-          <th scope="col">Delete</th>
-        </tr>
-        </thead>
-        <tbody id="facility-list">
-        <tr *ngFor="let facility of facilitys">
-          <td>{{facility.id}}</td>
-          <td>{{facility.name}}</td>
-          <td>{{facility.area}}</td>
-          <td><button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#create">update</button></td>
-          <td><button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#delete">delete</button></td>
-        </tr>
-        </tbody>
-      </table>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row d-flex justify-content-between">
+    <div class="col-4 d-flex justify-content-center p-0 my-3" *ngFor="let facility of facilitys">
+      <div class="card container-img shadow-card" style="width: 18rem;">
+        <img class="card-img-top image"
+             src="https://cdn.pixabay.com/photo/2017/08/07/09/25/swimming-2601877_960_720.jpg"
+             alt="Card image cap">
+        <div class="middle">
+          <a data-toggle="modal" data-target="#create">
+            <div class="text">update</div>
+          </a>
+        </div>
+        <div class="card-body">
+          <div class="row d-flex justify-content-between">
+            <div>
+              <h6 class="m-0">{{facility.name}}</h6>
+              <small>Area: {{facility.area}}</small>
+            </div>
+            <div>
+              <a><i style="font-size: 1.2em" class="fa-solid fa-circle-info"></i></a>
+              <a><i data-toggle="modal" data-target="#delete" style="font-size: 1.2em"
+                    class="fa-solid fa-eraser ml-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -134,15 +171,17 @@
         <div class="row d-flex justify-content-around">
           <input type="hidden" id="delete-id">
           <div class="mb-2">
-            delete facility: <span id="delete-name"></span>
+            delete facility ?
           </div>
         </div>
         <div class="row d-flex justify-content-around mt-2">
           <div class="col-3 pr-0">
-            <input style="width: 100%" type="button" data-dismiss="modal" value="close" class="btn btn-sm bg-secondary text-light">
+            <input style="width: 100%" type="button" data-dismiss="modal" value="close"
+                   class="btn btn-sm bg-secondary text-light">
           </div>
           <div class="col-9">
-            <input style="width: 100%" type="button" value="delete" class="btn btn-sm bg-purple text-light deleteCustomer">
+            <input style="width: 100%" type="button" value="delete"
+                   class="btn btn-sm bg-purple text-light deleteCustomer">
           </div>
         </div>
       </div>
@@ -150,7 +189,6 @@
   </div>
 </div>
 <script>
-
   $("#create").on("change", "#facilityType", function () {
     console.log(this.value);
     switch (this.value) {
