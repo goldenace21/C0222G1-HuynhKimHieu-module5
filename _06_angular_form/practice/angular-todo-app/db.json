@@ -14,15 +14,6 @@
       "id": 3,
       "content": "content2",
       "complete": true
-    },
-    {
-      "id": 4,
-      "content": "content2",
-      "complete": true
-    },
-    {
-      "content": "cont",
-      "id": 5
     }
   ]
 }

@@ -61,7 +61,7 @@ export class TodoComponent implements OnInit {
     this.todoService.delete(id).subscribe(
       value => {},
       error => {},
-      () => this.ngOnInit()
+      () => {this.ngOnInit()}
     );
   }
 
