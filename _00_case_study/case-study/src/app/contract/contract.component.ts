@@ -13,9 +13,11 @@ export class ContractComponent implements OnInit {
   ngOnInit() {
   }
 
-  // contracts: Contract[] = [
-  //   {id: 1, name: "hieu",quantity: },
-  // ]
+  contracts: Contract[] = [
+    {id: "1", name: "hieu",quantity: "2",startDate: "12-12-2001", endDate: "02-04-2021", cost: 34, totalPrice: 23},
+    {id: "2", name: "hieu",quantity: "2",startDate: "12-12-2001", endDate: "02-04-2021", cost: 34, totalPrice: 23},
+    {id: "3", name: "hieu",quantity: "2",startDate: "12-12-2001", endDate: "02-04-2021", cost: 34, totalPrice: 23},
+  ]
 
 }
 // id:string;

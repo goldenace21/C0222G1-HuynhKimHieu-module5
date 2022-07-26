@@ -90,44 +90,20 @@
           <th scope="col">Quantity</th>
           <th scope="col">Date start</th>
           <th scope="col">Date end</th>
-          <th scope="col">deposit</th>
+          <th scope="col">Date end</th>
           <th scope="col">total money</th>
           <th scope="col">Update</th>
           <th scope="col">Delete</th>
         </tr>
         </thead>
-        <tbody id="customer-list">
-        <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>20-11-21</td>
-          <td>21-11-22</td>
-          <td>35</td>
-          <td>58</td>
-          <td><button type="button" class="btn btn-outline-info btn-sm editCustomer" data-toggle="modal" data-target="#create">update</button></td>
-          <td>
-            <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#delete">delete</button>
-          </td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>20-11-21</td>
-          <td>21-11-22</td>
-          <td>35</td>
-          <td>58</td>
-          <td><button type="button" class="btn btn-outline-info btn-sm editCustomer" data-toggle="modal" data-target="#create">update</button></td>
-          <td>
-            <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#delete">delete</button>
-          </td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>20-11-21</td>
-          <td>21-11-22</td>
-          <td>35</td>
-          <td>58</td>
+        <tbody>
+        <tr *ngFor="let contract of contracts">
+          <td>{{contract.id}}</td>
+          <td>{{contract.quantity}}</td>
+          <td>{{contract.startDate}}</td>
+          <td>{{contract.endDate}}</td>
+          <td>{{contract.cost}}</td>
+          <td>{{contract.totalPrice}}</td>
           <td><button type="button" class="btn btn-outline-info btn-sm editCustomer" data-toggle="modal" data-target="#create">update</button></td>
           <td>
             <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#delete">delete</button>

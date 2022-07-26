@@ -5,38 +5,12 @@
       <h2 class="mx-auto my-4"><em>Facility management</em></h2>
     </div>
   </div>
-  <div class="container-fluid">
-    <div class="row mb-4 d-flex justify-content-center">
-      <div id="carouselExampleControls" class="carousel slide w-100 col-10" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active" style="height: 30em;">
-            <img style="overflow: hidden" class="d-block w-100 rounded" src="https://cdn.pixabay.com/photo/2017/07/03/22/52/blue-2469300_960_720.jpg" alt="First slide">
-          </div>
-          <div class="carousel-item" style="height: 30em;">
-            <img style="overflow: hidden" class="d-block w-100 rounded" src="https://cdn.pixabay.com/photo/2015/01/13/13/21/paradise-598201_960_720.jpg" alt="Second slide">
-          </div>
-          <div class="carousel-item" style="height: 30em;">
-            <img style="overflow: hidden" class="d-block w-100 rounded" src="https://cdn.pixabay.com/photo/2016/02/29/06/43/cancun-1228131_960_720.jpg" alt="Third slide">
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </div>
-  </div>
   <div class="container p-0">
     <div class="row d-flex justify-content-between">
-      <div>
+      <div class="ml-5">
         <button id="modal" type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal"
                 data-target="#create">add new facility
         </button>
-
         <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
              aria-hidden="true">
           <div class="modal-dialog modal-lg" role="document">
@@ -45,8 +19,8 @@
                 <h6 class="modal-title text-light" id="exampleModalLabel">Facility form</h6>
               </div>
               <div class="modal-body bg-white rounded-bottom">
-                <form action="/facility" method="post" id="create-customer">
-                  <input type="hidden" id="id" placeholder="id">
+                <form>
+                  <input type="hidden" id="id">
                   <div class="row d-flex justify-content-around mb-3">
                     <div class="col-6 ">
                       <select class="form-control form-control-sm" id="facilityType">
@@ -121,7 +95,7 @@
           </div>
         </div>
       </div>
-      <div>
+      <div class="mr-5">
         <form id="search-customer" class="input-group input-group-sm mb-3">
           <input id="search-name" style="background: rgba(0,0,0,0)" class="form-control mr-sm-2" type="search" placeholder="Search by name" aria-label="Small">
           <input type="button" onclick="searchCustomer()" value="search" class="btn btn-outline-success btn-sm">
@@ -188,10 +162,38 @@
     </div>
   </div>
 </div>
+
 <script>
-  $("#create").on("change", "#facilityType", function () {
-    console.log(this.value);
-    switch (this.value) {
+  // $("#create").on("change", "#facilityType", function () {
+  //   console.log(this.value);
+  //   switch (this.value) {
+  //     case"1":
+  //       document.getElementById("standardRoom_ok").style.setProperty('display', 'block', 'important');
+  //       document.getElementById("description_ok").style.setProperty('display', 'block', 'important');
+  //       document.getElementById("floorsNumber_ok").style.setProperty('display', 'block', 'important');
+  //       document.getElementById("poolArea_ok").style.setProperty('display', 'block', 'important');
+  //       document.getElementById("facilityFree_ok").style.setProperty('display', 'none', 'important');
+  //       break;
+  //     case"2":
+  //       document.getElementById("standardRoom_ok").style.setProperty('display', 'block', 'important');
+  //       document.getElementById("description_ok").style.setProperty('display', 'block', 'important');
+  //       document.getElementById("floorsNumber_ok").style.setProperty('display', 'block', 'important');
+  //       document.getElementById("poolArea_ok").style.setProperty('display', 'none', 'important');
+  //       document.getElementById("facilityFree_ok").style.setProperty('display', 'none', 'important');
+  //       break;
+  //     case"3":
+  //       document.getElementById("standardRoom_ok").style.setProperty('display', 'none', 'important');
+  //       document.getElementById("description_ok").style.setProperty('display', 'none', 'important');
+  //       document.getElementById("floorsNumber_ok").style.setProperty('display', 'none', 'important');
+  //       document.getElementById("poolArea_ok").style.setProperty('display', 'none', 'important');
+  //       document.getElementById("facilityFree_ok").style.setProperty('display', 'block', 'important');
+  //       break;
+  //   }
+  // })
+
+  function myFunction() {
+    let x = document.getElementById("facilityType").value;
+    switch (x) {
       case"1":
         document.getElementById("standardRoom_ok").style.setProperty('display', 'block', 'important');
         document.getElementById("description_ok").style.setProperty('display', 'block', 'important');
@@ -214,5 +216,6 @@
         document.getElementById("facilityFree_ok").style.setProperty('display', 'block', 'important');
         break;
     }
-  })
-</script>
+  }
+
+ </script>

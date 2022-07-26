@@ -21,4 +21,30 @@ export class FacilityComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  // changeFn($event: Event) {
+  //   switch () {
+  //     case"1":
+  //       document.getElementById("standardRoom_ok").style.setProperty('display', 'block', 'important');
+  //       document.getElementById("description_ok").style.setProperty('display', 'block', 'important');
+  //       document.getElementById("floorsNumber_ok").style.setProperty('display', 'block', 'important');
+  //       document.getElementById("poolArea_ok").style.setProperty('display', 'block', 'important');
+  //       document.getElementById("facilityFree_ok").style.setProperty('display', 'none', 'important');
+  //       break;
+  //     case"2":
+  //       document.getElementById("standardRoom_ok").style.setProperty('display', 'block', 'important');
+  //       document.getElementById("description_ok").style.setProperty('display', 'block', 'important');
+  //       document.getElementById("floorsNumber_ok").style.setProperty('display', 'block', 'important');
+  //       document.getElementById("poolArea_ok").style.setProperty('display', 'none', 'important');
+  //       document.getElementById("facilityFree_ok").style.setProperty('display', 'none', 'important');
+  //       break;
+  //     case"3":
+  //       document.getElementById("standardRoom_ok").style.setProperty('display', 'none', 'important');
+  //       document.getElementById("description_ok").style.setProperty('display', 'none', 'important');
+  //       document.getElementById("floorsNumber_ok").style.setProperty('display', 'none', 'important');
+  //       document.getElementById("poolArea_ok").style.setProperty('display', 'none', 'important');
+  //       document.getElementById("facilityFree_ok").style.setProperty('display', 'block', 'important');
+  //       break;
+  //   }
+  // }
 }

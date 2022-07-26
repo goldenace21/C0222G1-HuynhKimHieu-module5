@@ -17,58 +17,59 @@
                 <h6 class="modal-title text-light" id="exampleModalLabel">Customer form</h6>
               </div>
               <div class="modal-body bg-white rounded-bottom">
-                <form id="create-customer">
-                  <input type="hidden" id="id" placeholder="id">
+                <form [formGroup]="customerInfo">
+                  <input type="hidden" formControlName="id" id="id">
                   <div class="row d-flex justify-content-around mb-3">
                     <div class="col-6 pr-0">
-                      <input id="idCustomer" type="text" placeholder="enter id customer" class="form-control form-control-sm">
+                      <input formControlName="code" id="code" type="text" placeholder="enter id customer" class="form-control form-control-sm">
+                      <div *ngIf="customerInfo.controls.code.hasError('required') && customerInfo.controls.code.dirty" class="form-text text-danger">required</div>
+                      <div *ngIf="customerInfo.controls.code.hasError('pattern') && customerInfo.controls.code.dirty" class="form-text text-danger">error format</div>
                     </div>
                     <div class="col-6">
-                      <input id="name" type="text" placeholder="enter name" class="form-control form-control-sm">
+                      <input id="name" formControlName="name" type="text" placeholder="enter name" class="form-control form-control-sm">
+                      <div *ngIf="customerInfo.controls.name.hasError('required') && customerInfo.controls.name.dirty" class="form-text text-danger">required</div>
                     </div>
                   </div>
                   <div class="row d-flex justify-content-around my-3">
                     <div class="col-12">
-                      <input id="birthday" type="date" placeholder="enter birthday" class="form-control form-control-sm">
+                      <input id="birthday" formControlName="birthday" type="date" placeholder="enter birthday" class="form-control form-control-sm">
                     </div>
                   </div>
                   <div class="row d-flex justify-content-around my-3">
-                    <div class="col-6">
-                      <input id="idCard" type="text" placeholder="enter id card" class="form-control form-control-sm">
-                    </div>
-                    <div class="col-6 pl-0">
-                      <input id="phoneNumber" type="text" placeholder="enter phone number" class="form-control form-control-sm">
+                    <div class="col-12">
+                      <input id="phoneNumber" formControlName="phoneNumber" type="text" placeholder="enter phone number" class="form-control form-control-sm">
+                      <div *ngIf="customerInfo.controls.phoneNumber.hasError('pattern') && customerInfo.controls.phoneNumber.dirty" class="form-text text-danger">error format</div>
+                      <div *ngIf="customerInfo.controls.phoneNumber.hasError('required') && customerInfo.controls.phoneNumber.dirty" class="form-text text-danger">required</div>
                     </div>
                   </div>
                   <div class="row d-flex justify-content-around">
                     <div class="col-12">
                       <div class="form-group">
-                        <select class="form-control form-control-sm" id="gender">
-                          <option>male</option>
+                        <select class="form-control form-control-sm" id="gender" formControlName="gender">
+                          <option [selected]="true">male</option>
+                          <option >female</option>
                         </select>
                       </div>
                     </div>
                   </div>
                   <div class="row d-flex justify-content-around">
-                    <div class="col-6 pr-0">
-                      <input id="email" type="text" placeholder="enter email" class="form-control form-control-sm">
-                    </div>
-                    <div class="col-6">
-                      <input id="address" type="text" placeholder="enter address" class="form-control form-control-sm">
+                    <div class="col-12">
+                      <input id="address" formControlName="address" type="text" placeholder="enter address" class="form-control form-control-sm">
+                      <div *ngIf="customerInfo.controls.address.hasError('required') && customerInfo.controls.address.dirty" class="form-text text-danger">required</div>
                     </div>
                   </div>
                   <div class="row d-flex justify-content-around mt-3">
                     <div class="col-12">
                       <div class="form-group">
-                        <select class="form-control form-control-sm" id="idType">
-                          <option></option>
+                        <select class="form-control form-control-sm" id="type" formControlName="type">
+                          <option [ngValue]="temp" *ngFor="let temp of type">{{temp.name}}</option>
                         </select>
                       </div>
                     </div>
                   </div>
                   <div class="row d-flex justify-content-around">
                     <div class="col-12">
-                      <input style="width: 100%" type="submit" onclick="createCustomer()" value="submit" class="btn btn-sm bg-purple text-light">
+                      <input style="width: 100%" [disabled]="customerInfo.invalid" data-dismiss="modal" type="button" value="submit" (click)="createCustomer()" class="btn btn-sm bg-purple text-light">
                     </div>
                   </div>
                 </form>
@@ -101,16 +102,16 @@
         </thead>
         <tbody id="customer-list">
         <tr *ngFor="let customer of customers">
-          <td>{{customer.id}}</td>
+          <td>{{customer.code}}</td>
           <td>{{customer.name}}</td>
           <td>{{customer.birthday}}</td>
           <td>{{customer.gender}}</td>
           <td>{{customer.phoneNumber}}</td>
           <td>{{customer.address}}</td>
-          <td>{{customer.type}}</td>
-          <td><button type="button" class="btn btn-outline-info btn-sm editCustomer" data-toggle="modal" data-target="#create">update</button></td>
+          <td>{{customer.type.name}}</td>
+          <td><button type="button" class="btn btn-outline-info btn-sm" (click)="formEdit(customer.id)" data-toggle="modal" data-target="#create">update</button></td>
           <td>
-            <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#delete">delete</button>
+            <button type="button" (click)="idCustomer(customer.id)" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#delete">delete</button>
           </td>
         </tr>
         </tbody>
@@ -136,7 +137,7 @@
             <input style="width: 100%" type="button" data-dismiss="modal" value="close" class="btn btn-sm bg-secondary text-light">
           </div>
           <div class="col-9">
-            <input style="width: 100%" type="button" value="delete" class="btn btn-sm bg-purple text-light deleteCustomer">
+            <input type="button" data-dismiss="modal" (click)="deleteCustomer()" value="delete" class="btn btn-sm bg-purple w-100 text-light">
           </div>
         </div>
       </div>

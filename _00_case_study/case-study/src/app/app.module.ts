@@ -10,6 +10,8 @@ import { CustomerComponent } from './customer/customer.component';
 import { EployeeComponent } from './eployee/eployee.component';
 import { FacilityComponent } from './facility/facility.component';
 import { ContractComponent } from './contract/contract.component';
+import {HttpClientModule} from "@angular/common/http";
+import {ReactiveFormsModule, FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -24,7 +26,10 @@ import { ContractComponent } from './contract/contract.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   exports: [

@@ -1,9 +1,13 @@
 export interface Customer {
-  id: number
-  name: string;
-  birthday: string;
-  gender: number;
-  phoneNumber: string;
-  address: string;
-  type: string;
+  id?: number
+  code?: string;
+  name?: string;
+  birthday?: string;
+  gender?: string;
+  phoneNumber?: string;
+  address?: string;
+  type?: {
+    id?: number;
+    name?: string;
+  }
 }
