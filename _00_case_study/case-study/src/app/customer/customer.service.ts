@@ -25,7 +25,15 @@ export class CustomerService {
     console.log(customer)
     return this.httpClient.post(this.URL_API, customer);
   }
-  //
+
+  searchByName(name: string):Observable<Customer[]> {
+    if (name) {
+      return this.httpClient.get<Type[]>(this.URL_API + "?name_like=" + name);
+    } else {
+      return this.httpClient.get<Customer[]>(this.URL_API);
+    }
+  }
+
   // save(todo: Todo): Observable<Todo> {
   //   return this.httpClient.post(this.URL_API, todo);
   // }
@@ -37,8 +45,8 @@ export class CustomerService {
   findById(id: number): Observable<Customer> {
     return this.httpClient.get<Customer>(this.URL_API + '/' + id);
   }
-  //
-  // update(todo: Todo): Observable<void> {
-  //   return this.httpClient.patch<void>(this.URL_API+'/'+ todo.id, todo)
-  // }
+
+  update(customer: Customer): Observable<void> {
+    return this.httpClient.patch<void>(this.URL_API+'/'+ customer.id, customer)
+  }
 }

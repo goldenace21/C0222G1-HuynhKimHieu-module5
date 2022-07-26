@@ -12,6 +12,8 @@ import { FacilityComponent } from './facility/facility.component';
 import { ContractComponent } from './contract/contract.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule, FormsModule} from "@angular/forms";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ToastrModule} from "ngx-toastr";
 
 @NgModule({
   declarations: [
@@ -29,7 +31,14 @@ import {ReactiveFormsModule, FormsModule} from "@angular/forms";
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 2000,
+      closeButton: true,
+      progressBar: true,
+      positionClass:   'toast-top-right',
+    }),
   ],
   providers: [],
   exports: [

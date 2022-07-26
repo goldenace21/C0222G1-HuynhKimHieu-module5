@@ -62,7 +62,7 @@
                     <div class="col-12">
                       <div class="form-group">
                         <select class="form-control form-control-sm" id="type" formControlName="type">
-                          <option [ngValue]="temp" *ngFor="let temp of type">{{temp.name}}</option>
+                          <option [ngValue]="temp" *ngFor="let temp of type" [selected]="true">{{temp.name}}</option>
                         </select>
                       </div>
                     </div>
@@ -79,10 +79,10 @@
         </div>
       </div>
       <div>
-        <form id="search-customer" class="input-group input-group-sm mb-3">
-          <input id="search-name" style="background: rgba(0,0,0,0)" class="form-control mr-sm-2" type="search" placeholder="Search by name" aria-label="Small">
-          <input type="button" onclick="searchCustomer()" value="search" class="btn btn-outline-success btn-sm">
-        </form>
+        <div class="input-group input-group-sm mb-3">
+          <input id="search-name" [(ngModel)]="nameSearch" style="background: rgba(0,0,0,0)" class="form-control mr-sm-2" type="search" placeholder="Search by name" aria-label="Small">
+          <input type="button" (click)="searchCustomer()" value="search" class="btn btn-outline-success btn-sm">
+        </div>
       </div>
     </div>
     <div class="row my-3">

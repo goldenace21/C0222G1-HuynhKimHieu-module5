@@ -3,6 +3,7 @@ import {Customer} from "./customer";
 import {CustomerService} from "./customer.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Type} from "./type";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-customer',
@@ -16,13 +17,16 @@ export class CustomerComponent implements OnInit {
   customer: Customer;
   customerEdit: Customer;
   type: Type[];
+  nameSearch: string;
 
-  constructor(private customerService: CustomerService) { }
+  constructor(private customerService: CustomerService,
+              private toastr: ToastrService) {}
 
   ngOnInit() {
     this.customers = new Array();
     this.customerService.findAll().subscribe(
-      value => { this.customers = value},
+      value => { this.customers = value;
+        this.toastr.success('Hello world!', 'Toastr fun!');},
       error => {},
       () => {}
     )
@@ -34,7 +38,6 @@ export class CustomerComponent implements OnInit {
       () => {}
     )
 
-
     this.customerInfo = new FormGroup({
       id: new FormControl(),
       code: new FormControl('', [Validators.required, Validators.pattern("KH-\\d{4}")]),
@@ -45,22 +48,12 @@ export class CustomerComponent implements OnInit {
       address: new FormControl('', [Validators.required]),
       type: new FormControl()
     })
-  }
 
-  delete(id: number): void {
-    this.customerService.delete(id).subscribe(
-      value => {},
-      error => {},
-      () => {this.ngOnInit()}
-    )
   }
 
   createCustomer() {
     this.customer = this.customerInfo.value;
-    if (this.customerInfo.value.id != null) {
-      this.updateCustomer()
-      return
-    }
+    console.log(this.customer)
     this.customerService.save(this.customer).subscribe(
       value => {},
       error => {},
@@ -83,7 +76,7 @@ export class CustomerComponent implements OnInit {
 
   formEdit(id: number):void {
     this.customerService.findById(id).subscribe(
-      value => { this.customerEdit = value},
+      value => {this.customerEdit = value},
       error => {},
       () => {}
     )
@@ -109,5 +102,14 @@ export class CustomerComponent implements OnInit {
 
   updateCustomer():void {
 
+  }
+
+  searchCustomer():void {
+    console.log(this.nameSearch)
+    this.customerService.searchByName(this.nameSearch).subscribe(
+      value => {this.customers = value},
+      error => {},
+      () => {}
+    )
   }
 }

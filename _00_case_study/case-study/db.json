@@ -77,19 +77,6 @@
         "id": 2,
         "name": "platinum"
       }
-    },
-    {
-      "id": 13,
-      "code": "KH-0004",
-      "name": "fsefesf",
-      "birthday": "2022-07-14",
-      "gender": "female",
-      "phoneNumber": "0900000000",
-      "address": "fsefsef",
-      "type": {
-        "id": 2,
-        "name": "platinum"
-      }
     }
   ],
   "type": [
