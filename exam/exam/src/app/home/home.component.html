@@ -1,0 +1,115 @@
+<div class="container-fluid bg p-0">
+  <div class="row">
+    <div class="col-5 mx-auto mt-5" style="height: 10em; display: flex; justify-content: center;">
+      <img class="my-5 b-hover" style="height: 100%;" src="https://i.stack.imgur.com/C9301.png">
+    </div>
+  </div>
+  <div class="row my-3 col-4 mx-auto">
+    <h2 style="font-weight: bold;font-size: 2.5em; text-align: center" class="my-5">
+      <u>THIS WORLD CLASS RESORT, <em>FURAMA</em> DANANG</u>
+    </h2>
+  </div>
+  <div class="row">
+    <div class="col-7 mx-auto">
+      <h6 style="font-size: 1.5em; font-weight: normal; text-align: center" class="text-secondary">All 198 rooms & suites have
+        polished timber floors, natural fabrics, comfortable cane furniture, plantation style shutters and
+        ceiling fans. Each room also has its own balcony.</h6>
+    </div>
+  </div>
+
+<div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div style="background: rgba(0,0,0,0)" class="modal-content">
+      <div class="modal-header d-flex justify-content-center bg-purple">
+        <h6 class="modal-title text-light" id="exampleModalLabel">Facility form</h6>
+      </div>
+      <div class="modal-body bg-white rounded-bottom">
+        <form action="/facility" method="post" id="create-customer">
+          <input type="hidden" id="id" placeholder="id">
+          <div class="row d-flex justify-content-around mb-3">
+            <div class="col-6">
+              <input id="area" type="text" placeholder="enter area" class="form-control form-control-sm">
+            </div>
+            <div class="col-6 pl-0">
+              <input id="cost" type="text" placeholder="enter cost" class="form-control form-control-sm">
+            </div>
+          </div>
+          <div class="row d-flex justify-content-around my-3">
+            <div class="col-6">
+              <input id="maxPeople" type="text" placeholder="enter max people" class="form-control form-control-sm">
+            </div>
+            <div class="col-6 pl-0">
+              <select class="form-control form-control-sm" id="rentType">
+                <option ></option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row d-flex justify-content-around mt-3" id="standardRoom_ok">
+            <div class="col-12">
+              <input type="text" placeholder="enter standard room" class="form-control form-control-sm">
+            </div>
+          </div>
+
+          <div class="row d-flex justify-content-around mt-3" id="description_ok">
+            <div class="col-12">
+              <input type="text" placeholder="enter description" class="form-control form-control-sm">
+            </div>
+          </div>
+
+          <div class="row d-flex justify-content-around mt-3" id="poolArea_ok">
+            <div class="col-12">
+              <input type="text" placeholder="enter pool area" class="form-control form-control-sm">
+            </div>
+          </div>
+
+          <div class="row d-flex justify-content-around mt-3" id="floorsNumber_ok">
+            <div class="col-12">
+              <input type="text" placeholder="enter floors number" class="form-control form-control-sm">
+            </div>
+          </div>
+
+          <div class="row d-flex justify-content-around mt-3" id="facilityFree_ok">
+            <div class="col-12">
+              <input type="text" placeholder="enter facility free" class="form-control form-control-sm">
+            </div>
+          </div>
+
+          <div class="row d-flex justify-content-around mt-3">
+            <div class="col-12">
+              <input style="width: 100%" type="submit" onclick="createCustomer()" value="submit" class="btn btn-sm bg-purple text-light">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div style="background: rgba(0,0,0,0)" class="modal-content">
+      <div class="modal-header d-flex justify-content-center bg-purple">
+        <h6 class="modal-title text-light">Confirm</h6>
+      </div>
+      <div class="modal-body bg-white rounded-bottom">
+        <div class="row d-flex justify-content-around">
+          <input type="hidden" id="delete-id">
+          <div class="mb-2">
+            delete facility ?
+          </div>
+        </div>
+        <div class="row d-flex justify-content-around mt-2">
+          <div class="col-3 pr-0">
+            <input style="width: 100%" type="button" data-dismiss="modal" value="close" class="btn btn-sm bg-secondary text-light">
+          </div>
+          <div class="col-9">
+            <input style="width: 100%" type="button" value="delete" class="btn btn-sm bg-purple text-light deleteCustomer">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

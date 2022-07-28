@@ -1,0 +1,185 @@
+{
+  "student": [
+    {
+      "id": 1,
+      "name": "Nguyen Van An",
+      "gender": "male",
+      "class": {
+        "id": 1,
+        "name": "c02"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Do Hung Long",
+      "gender": "male",
+      "class": {
+        "id": 1,
+        "name": "c02"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Tran Cong Khanh",
+      "gender": "female",
+      "class": {
+        "id": 2,
+        "name": "c03"
+      }
+    },
+    {
+      "id": 4,
+      "name": "hieu",
+      "gender": null,
+      "class": {
+        "id": 1,
+        "name": "c02"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Hieu Huynh",
+      "gender": "male",
+      "class": {
+        "id": 2,
+        "name": "c03"
+      }
+    },
+    {
+      "id": 6,
+      "name": "hiêu",
+      "gender": "female",
+      "class": {
+        "id": 1,
+        "name": "c02"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Hieu Huynh",
+      "gender": "female",
+      "class": {
+        "id": 1,
+        "name": "c02"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Hieu Huynh",
+      "gender": "male",
+      "class": {
+        "id": 2,
+        "name": "c03"
+      }
+    },
+    {
+      "id": 9,
+      "name": "utyrerwrt",
+      "gender": "female",
+      "class": {
+        "id": 2,
+        "name": "c03"
+      }
+    }
+  ],
+  "class": [
+    {
+      "id": 1,
+      "name": "c02"
+    },
+    {
+      "id": 2,
+      "name": "c03"
+    }
+  ],
+  "ticket": [
+    {
+      "id": 1,
+      "startPlace": "da nang",
+      "endPlace": "hue",
+      "dateStart": "02-12-2021",
+      "timeStart": "00:12",
+      "quantity": -3,
+      "price": "30",
+      "home": {
+        "id": 1,
+        "name": "home1"
+      }
+    },
+    {
+      "id": 2,
+      "startPlace": "ho chi minh",
+      "endPlace": "hue",
+      "dateStart": "02-12-2022",
+      "timeStart": "22:12",
+      "quantity": 0,
+      "price": "40",
+      "home": {
+        "id": 2,
+        "name": "home2"
+      }
+    },
+    {
+      "id": 3,
+      "startPlace": "ha noi",
+      "endPlace": "da nang",
+      "dateStart": "2022-07-06",
+      "timeStart": "18:34",
+      "quantity": 22,
+      "price": "234",
+      "home": {
+        "id": 1,
+        "name": "home1"
+      }
+    },
+    {
+      "id": 4,
+      "startPlace": "ha noi",
+      "endPlace": "da nang",
+      "dateStart": "2022-07-08",
+      "timeStart": "12:34",
+      "quantity": 220,
+      "price": "23",
+      "home": {
+        "id": 1,
+        "name": "home1"
+      }
+    },
+    {
+      "id": 5,
+      "startPlace": "ha noi",
+      "endPlace": "sdf",
+      "dateStart": "2022-07-13",
+      "timeStart": "00:45",
+      "quantity": 4,
+      "price": "3434234234",
+      "home": {
+        "id": 2,
+        "name": "home2"
+      }
+    },
+    {
+      "id": 6,
+      "startPlace": "ha noi",
+      "endPlace": "hue",
+      "dateStart": "2022-01-01",
+      "timeStart": "01:01",
+      "quantity": "5",
+      "price": "12000",
+      "home": {
+        "id": 1,
+        "name": "home1"
+      }
+    }
+  ],
+  "home": [
+    {
+      "id": 1,
+      "name": "home1"
+    },
+    {
+      "id": 2,
+      "name": "home2"
+    }
+  ]
+}

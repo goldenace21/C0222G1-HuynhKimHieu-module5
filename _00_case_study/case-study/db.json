@@ -51,32 +51,6 @@
         "id": 2,
         "name": "platinum"
       }
-    },
-    {
-      "id": 11,
-      "code": "KH-4454",
-      "name": "Hieu Huynh",
-      "birthday": "19999-12-12",
-      "gender": "male",
-      "phoneNumber": "02535655196",
-      "address": "da nang",
-      "type": {
-        "id": 2,
-        "name": "platinum"
-      }
-    },
-    {
-      "id": 12,
-      "code": "KH-5657",
-      "name": "C0222G1 - Huynh kim Hieu",
-      "birthday": "2022-07-14",
-      "gender": "male",
-      "phoneNumber": "84932566157",
-      "address": "da nang",
-      "type": {
-        "id": 2,
-        "name": "platinum"
-      }
     }
   ],
   "type": [

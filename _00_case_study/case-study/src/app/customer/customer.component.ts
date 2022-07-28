@@ -20,13 +20,12 @@ export class CustomerComponent implements OnInit {
   nameSearch: string;
 
   constructor(private customerService: CustomerService,
-              private toastr: ToastrService) {}
+           ) {}
 
   ngOnInit() {
     this.customers = new Array();
     this.customerService.findAll().subscribe(
-      value => { this.customers = value;
-        this.toastr.success('Hello world!', 'Toastr fun!');},
+      value => { this.customers = value},
       error => {},
       () => {}
     )
