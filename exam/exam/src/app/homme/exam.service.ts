@@ -57,8 +57,11 @@ export class ExamService {
   // }
 
   //connect backend
-  getAllTicket(): Observable<Ticket[]> {
-    return this.httpClient.get<Ticket[]>(API_URL + '/api/manager-ticket/list');
+  getAllTicket(place: string): Observable<Ticket[]> {
+    if (place === ''){
+      place = '%20'
+    }
+    return this.httpClient.get<Ticket[]>(API_URL + '/api/manager-ticket/list/search/' + place);
   }
 
   getAllHome(): Observable<Home[]> {

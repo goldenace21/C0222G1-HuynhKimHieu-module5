@@ -26,7 +26,7 @@ export class HommeComponent implements OnInit {
     price: new FormControl('', [Validators.required, Validators.pattern("[1-9]{1}[\\d]*")]),
     home: new FormControl('', [Validators.required])
   });
-  place: string;
+  place: string = "";
 
   constructor(private examService: ExamService) { }
 
@@ -35,7 +35,7 @@ export class HommeComponent implements OnInit {
     this.getAllHome();
   }
   getAllTicket() {
-    this.examService.getAllTicket().subscribe(tickets => {
+    this.examService.getAllTicket(this.place).subscribe(tickets => {
       this.tickets = tickets;
       console.log(this.tickets)
     });
@@ -94,6 +94,7 @@ export class HommeComponent implements OnInit {
   //     () => {}
   //   )
   // }
+
   booking() {
     this.examService.booking(this.bookingTicket).subscribe(
       value => {},
@@ -113,7 +114,7 @@ export class HommeComponent implements OnInit {
   }
 
   search() {
-
+    this.getAllTicket();
   }
 
   createTicket() {

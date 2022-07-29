@@ -15,8 +15,8 @@ public class TicketServiceImpl implements TicketService {
     private TicketRepository ticketRepository;
 
     @Override
-    public List<Ticket> findAll() {
-        return ticketRepository.findAll();
+    public List<Ticket> findAll(String startPlace) {
+        return ticketRepository.findAll("%"+startPlace+"%");
     }
 
     @Override

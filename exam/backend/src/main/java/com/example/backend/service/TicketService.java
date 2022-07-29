@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface TicketService {
-    List<Ticket> findAll();
+    List<Ticket> findAll(String startPlace);
 
     Ticket findById(Integer id);
 

@@ -2,8 +2,11 @@ package com.example.backend.repository;
 
 import com.example.backend.model.Ticket;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 
 @Transactional
@@ -17,4 +20,7 @@ public interface TicketRepository extends JpaRepository<Ticket, Integer> {
 //    Page<Customer> findAll(Pageable pageable, @Param("name") String name);
 //
 //    Optional<Customer> findById(Integer id);
+
+    @Query(value = "select * from ticket where start_place like :startPlace", nativeQuery = true)
+    List<Ticket> findAll(@Param("startPlace") String startPlace);
 }

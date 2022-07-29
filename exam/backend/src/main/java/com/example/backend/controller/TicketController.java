@@ -18,12 +18,10 @@ public class TicketController {
     @Autowired
     private TicketService ticketService;
 
-    @GetMapping
+    @GetMapping("search/{place}")
     @ResponseBody
-    public ResponseEntity<List<Ticket>> getListTicket() {
-
-        List<Ticket> ticketList = ticketService.findAll();
-
+    public ResponseEntity<List<Ticket>> getListTicket(@PathVariable String place) {
+        List<Ticket> ticketList = ticketService.findAll(place);
         if (ticketList == null) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
