@@ -20,8 +20,8 @@ export class HommeComponent implements OnInit {
     id: new FormControl(),
     startPlace: new FormControl('', [Validators.required]),
     endPlace: new FormControl('', [Validators.required]),
-    dateStart: new FormControl('', [Validators.required]),
-    timeStart: new FormControl('', [Validators.required, Validators.pattern("\\d{2}:\\d{2}")]),
+    startDate: new FormControl('', [Validators.required]),
+    startTime: new FormControl('', [Validators.required, Validators.pattern("\\d{2}:\\d{2}")]),
     quantity: new FormControl('', [Validators.required, Validators.min(1)]),
     price: new FormControl('', [Validators.required, Validators.pattern("[1-9]{1}[\\d]*")]),
     home: new FormControl('', [Validators.required])
@@ -31,59 +31,92 @@ export class HommeComponent implements OnInit {
   constructor(private examService: ExamService) { }
 
   ngOnInit() {
-    this.examService.findAll().subscribe(
-      value => { this.tickets = value},
-      error => {},
-      () => {}
-    )
-
-    this.examService.findAllHome().subscribe(
-      value => { this.homes = value},
-      error => {},
-      () => {}
-    )
-
+    this.getAllTicket();
+    this.getAllHome();
   }
+  getAllTicket() {
+    this.examService.getAllTicket().subscribe(tickets => {
+      this.tickets = tickets;
+      console.log(this.tickets)
+    });
+  }
+
+  getAllHome() {
+    this.examService.getAllHome().subscribe(
+      value => {
+        this.homes = value;
+        console.log(value)
+      },
+      error => {},
+      () => {}
+    )
+  }
+
 
   formEdit(id: number) {
 
   }
 
+  // idItem(id: number) {
+  //   this.examService.findById(id).subscribe(
+  //     value => this.bookingTicket = value,
+  //   )
+  //   this.startPlace = this.bookingTicket.startPlace;
+  //   this.endPlace = this.bookingTicket.endPlace;
+  //   console.log(this.bookingTicket)
+  //   if( this.bookingTicket.quantity = 0) {
+  //
+  //   }
+  // }
+  //
+  // createTicket() {
+  //   this.examService.save(this.homeForm.value).subscribe(
+  //     value => {},
+  //     error => {},
+  //     () => { this.ngOnInit()}
+  //   )
+  // }
+  //
+  // booking() {
+  //   console.log(this.bookingTicket)
+  //   this.bookingTicket.quantity = this.bookingTicket.quantity -1
+  //   this.examService.booking(this.bookingTicket).subscribe(
+  //     value => {},
+  //     error => {},
+  //     () => { this.ngOnInit()},
+  //   )
+  // }
+  //
+  // search() {
+  //   this.examService.search(this.place).subscribe(
+  //     value => { this.tickets = value},
+  //     error => {},
+  //     () => {}
+  //   )
+  // }
+  booking() {
+
+  }
+
   idItem(id: number) {
     this.examService.findById(id).subscribe(
-      value => this.bookingTicket = value,
-    )
-    console.log(this.bookingTicket)
-    this.startPlace = this.bookingTicket.startPlace;
-    this.endPlace = this.bookingTicket.endPlace;
-    if( this.bookingTicket.quantity = 1) {
-
-    }
-  }
-
-  createTicket() {
-    this.examService.save(this.homeForm.value).subscribe(
-      value => {},
+      value => { this.ticket = value ;
+        this.startPlace = this.ticket.startPlace;
+        this.endPlace = this.ticket.endPlace},
       error => {},
-      () => { this.ngOnInit()}
-    )
-  }
-
-  booking() {
-    console.log(this.bookingTicket)
-    this.bookingTicket.quantity = this.bookingTicket.quantity -1
-    this.examService.booking(this.bookingTicket).subscribe(
-      value => {},
-      error => {},
-      () => { this.ngOnInit()},
+      () => {}
     )
   }
 
   search() {
-    this.examService.search(this.place).subscribe(
-      value => { this.tickets = value},
+
+  }
+
+  createTicket() {
+    this.examService.create(this.homeForm.value).subscribe(
+      value => {},
       error => {},
-      () => {}
+      () => { this.ngOnInit() }
     )
   }
 }

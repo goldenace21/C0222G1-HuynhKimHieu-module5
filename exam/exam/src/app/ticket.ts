@@ -4,8 +4,8 @@ export interface Ticket {
   id?: number;
   startPlace?: string;
   endPlace?: string;
-  dateStart?: string;
-  timeStart?: string;
+  startDate?: string;
+  startTime?: string;
   quantity?: number;
   price?: string;
   home?: Home;

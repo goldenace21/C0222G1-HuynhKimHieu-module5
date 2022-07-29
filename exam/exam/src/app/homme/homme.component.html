@@ -14,7 +14,7 @@
           <div class="modal-dialog modal-lg" role="document">
             <div style="background: rgba(0,0,0,0)" class="modal-content">
               <div class="modal-header d-flex justify-content-center bg-purple">
-                <h6 class="modal-title text-light" id="exampleModalLabel">Customer form</h6>
+                <h6 class="modal-title text-light" id="exampleModalLabel">ticket form</h6>
               </div>
               <div class="modal-body bg-white rounded-bottom">
                 <form [formGroup]="homeForm">
@@ -41,16 +41,16 @@
                   <div class="row d-flex justify-content-around mt-3">
                     <div class="col-12">
                       <div class="form-group">
-                        <input formControlName="dateStart" id="dateStart" type="date" class="form-control form-control-sm">
+                        <input formControlName="startDate" id="dateStart" type="date" class="form-control form-control-sm">
                       </div>
                     </div>
                   </div>
                   <div class="row d-flex justify-content-around mt-3">
                     <div class="col-12">
                       <div class="form-group">
-                        <input formControlName="timeStart" id="timeStart" type="text" placeholder="enter timeStart" class="form-control form-control-sm">
-                        <div *ngIf="homeForm.controls.timeStart.hasError('pattern') && homeForm.controls.timeStart.dirty" class="form-text text-danger">wrong format</div>
-                        <div *ngIf="homeForm.controls.timeStart.hasError('required') && homeForm.controls.timeStart.dirty" class="form-text text-danger">required</div>
+                        <input formControlName="startTime" id="timeStart" type="text" placeholder="enter timeStart" class="form-control form-control-sm">
+                        <div *ngIf="homeForm.controls.startTime.hasError('pattern') && homeForm.controls.startTime.dirty" class="form-text text-danger">wrong format</div>
+                        <div *ngIf="homeForm.controls.startTime.hasError('required') && homeForm.controls.startTime.dirty" class="form-text text-danger">required</div>
                       </div>
                     </div>
                   </div>
@@ -74,7 +74,7 @@
                   </div>
                   <div class="row d-flex justify-content-around">
                     <div class="col-12">
-                      <input style="width: 100%" [disabled]="homeForm.invalid" data-dismiss="modal" type="button" value="submit" (click)="createTicket()" class="btn btn-sm bg-purple text-light">
+                      <input [disabled]="homeForm.invalid" data-dismiss="modal" type="button" value="submit" (click)="createTicket()" class="w-100 btn btn-sm bg-purple text-light">
                     </div>
                   </div>
                 </form>
@@ -84,10 +84,10 @@
         </div>
       </div>
       <div>
-                <div class="input-group input-group-sm mb-3">
-                  <input id="search-name" [(ngModel)]="place" style="background: rgba(0,0,0,0)" class="form-control mr-sm-2" type="search" placeholder="Search by start place" aria-label="Small">
-                  <input type="button" (click)="search()" value="search" class="btn btn-outline-success btn-sm">
-                </div>
+        <div class="input-group input-group-sm mb-3">
+          <input id="search-name" [(ngModel)]="place" style="background: rgba(0,0,0,0)" class="form-control mr-sm-2" type="search" placeholder="Search by start place" aria-label="Small">
+          <input type="button" (click)="search()" value="search" class="btn btn-outline-success btn-sm">
+        </div>
       </div>
     </div>
     <div class="row my-3">
@@ -109,8 +109,8 @@
           <td>{{item.startPlace}}</td>
           <td>{{item.endPlace}}</td>
           <td>{{item.price}}</td>
-          <td>{{item.dateStart}}</td>
-          <td>{{item.timeStart}}</td>
+          <td>{{item.startDate}}</td>
+          <td>{{item.startTime}}</td>
           <td>{{item.quantity}}</td>
           <td>{{item.home.name}}</td>
           <td>
