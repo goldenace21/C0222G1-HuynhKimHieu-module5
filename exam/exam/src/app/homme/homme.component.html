@@ -85,7 +85,8 @@
       </div>
       <div>
         <div class="input-group input-group-sm mb-3">
-          <input id="search-name" [(ngModel)]="place" style="background: rgba(0,0,0,0)" class="form-control mr-sm-2" type="search" placeholder="Search by start place" aria-label="Small">
+          <input [(ngModel)]="place1" style="background: rgba(0,0,0,0)" class="form-control mr-sm-2" type="search" placeholder="Search by start place" aria-label="Small">
+          <input [(ngModel)]="place2" style="background: rgba(0,0,0,0)" class="form-control mr-sm-2" type="search" placeholder="Search by end place" aria-label="Small">
           <input type="button" (click)="search()" value="search" class="btn btn-outline-success btn-sm">
         </div>
       </div>

@@ -1,7 +1,6 @@
 package com.example.backend.controller;
 
 import com.example.backend.model.Ticket;
-import com.example.backend.service.HomeService;
 import com.example.backend.service.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,10 +17,16 @@ public class TicketController {
     @Autowired
     private TicketService ticketService;
 
-    @GetMapping("search/{place}")
+    @GetMapping("search/{place1}/{place2}")
     @ResponseBody
-    public ResponseEntity<List<Ticket>> getListTicket(@PathVariable String place) {
-        List<Ticket> ticketList = ticketService.findAll(place);
+    public ResponseEntity<List<Ticket>> getListTicket(@PathVariable String place1,@PathVariable String place2) {
+        if (place1.equals(" ")) {
+            place1 = "";
+        }
+        if (place2.equals(" ")) {
+            place2 = "";
+        }
+        List<Ticket> ticketList = ticketService.findAll(place1,place2);
         if (ticketList == null) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }

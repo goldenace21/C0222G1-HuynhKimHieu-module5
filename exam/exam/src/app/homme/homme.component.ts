@@ -26,7 +26,8 @@ export class HommeComponent implements OnInit {
     price: new FormControl('', [Validators.required, Validators.pattern("[1-9]{1}[\\d]*")]),
     home: new FormControl('', [Validators.required])
   });
-  place: string = "";
+  place1: string = "";
+  place2: string = "";
 
   constructor(private examService: ExamService) { }
 
@@ -35,7 +36,7 @@ export class HommeComponent implements OnInit {
     this.getAllHome();
   }
   getAllTicket() {
-    this.examService.getAllTicket(this.place).subscribe(tickets => {
+    this.examService.getAllTicket(this.place1, this.place2).subscribe(tickets => {
       this.tickets = tickets;
       console.log(this.tickets)
     });

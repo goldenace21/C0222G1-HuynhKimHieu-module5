@@ -3,10 +3,9 @@ package com.example.backend.service;
 import com.example.backend.model.Ticket;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface TicketService {
-    List<Ticket> findAll(String startPlace);
+    List<Ticket> findAll(String startPlace, String endPlace);
 
     Ticket findById(Integer id);
 

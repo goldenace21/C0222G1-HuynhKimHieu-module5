@@ -21,6 +21,6 @@ public interface TicketRepository extends JpaRepository<Ticket, Integer> {
 //
 //    Optional<Customer> findById(Integer id);
 
-    @Query(value = "select * from ticket where start_place like :startPlace", nativeQuery = true)
-    List<Ticket> findAll(@Param("startPlace") String startPlace);
+    @Query(value = "select * from ticket where start_place like %:startPlace% and end_place like %:endPlace%", nativeQuery = true)
+    List<Ticket> findAll(@Param("startPlace") String startPlace, @Param("endPlace") String endPlace);
 }
