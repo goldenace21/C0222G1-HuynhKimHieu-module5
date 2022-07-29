@@ -70,7 +70,7 @@ export class ExamService {
   }
 
   booking(ticket: Ticket): Observable<void> {
-    return this.httpClient.patch<void>(API_URL + '/api/manager-ticket/list' + '/' + ticket.id, ticket)
+    return this.httpClient.patch<void>(API_URL + '/api/manager-ticket/list', ticket)
   }
 
   findById(id: number): Observable<Ticket> {

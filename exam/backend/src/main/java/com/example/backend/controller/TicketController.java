@@ -36,8 +36,12 @@ public class TicketController {
         return new ResponseEntity<>(ticket, HttpStatus.OK);
     }
 
-    @PatchMapping
-    public ResponseEntity<Ticket> BookingCusstomer
+    @PatchMapping("")
+    public ResponseEntity<Ticket> Booking(@RequestBody Ticket ticket) {
+        ticket.setQuantity(ticket.getQuantity() -1);
+        this.ticketService.save(ticket);
+        return new ResponseEntity<>(ticket, HttpStatus.OK);
+    }
 
     @PostMapping
     public ResponseEntity<Ticket> createCustomer(@RequestBody Ticket ticket) {

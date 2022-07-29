@@ -95,14 +95,18 @@ export class HommeComponent implements OnInit {
   //   )
   // }
   booking() {
-
+    this.examService.booking(this.bookingTicket).subscribe(
+      value => {},
+      error => {},
+      () => { this.ngOnInit()}
+    )
   }
 
   idItem(id: number) {
     this.examService.findById(id).subscribe(
-      value => { this.ticket = value ;
-        this.startPlace = this.ticket.startPlace;
-        this.endPlace = this.ticket.endPlace},
+      value => { this.bookingTicket = value ;
+        this.startPlace = this.bookingTicket.startPlace;
+        this.endPlace = this.bookingTicket.endPlace},
       error => {},
       () => {}
     )
